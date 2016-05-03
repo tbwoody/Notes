@@ -1,1 +1,1 @@
-This is a collection of study notes.
+This is a collection of my study notes.
