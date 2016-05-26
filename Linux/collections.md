@@ -95,3 +95,14 @@ In order for a deadlock to occur, you must have all four of the following condit
 
 Deadlock prevention entails removing any of hte above conditions, but it gets tricky because many of these conditions are difficult to satisfy.
 
+**11. Soft Link & Hard Link**              
+A softlink is a file that have the information to point to another file/inode. That inode points to the data on the hard drive.
+
+A hardlink is direct pointer to the original inode of the original file. If you compare the original file with hardlink, there won't be any differences.
+
+**12. C++ Virtual Function**                  
+If there are member functions with same name in base class and derived class, virtual functions gives programmer capability to call member function of different class by a same function call depending upon different context. This feature in C++ programming is known as polymorphism which is one of the important feature of OOP.       
+
+If a base class and derived class has same function and if you write code to access that function using pointer of base class then, the function in the base class is executed even if, the object of derived class is referenced with that pointer variable.
+
+
