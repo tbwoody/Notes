@@ -86,7 +86,7 @@ c和c++中struct的主要区别是c中的struct不可以含有成员函数，而
 **14. 操作系统中进程调度策略有哪几种？**      
 FCFS(先来先服务)，优先级，时间片轮转，多级反馈          
 
-**15. ISO的七层模型是什么？tcp/udp是属于哪一层？tcp/udp有何优缺点？**
+**15. ISO的七层模型是什么？tcp/udp是属于哪一层？tcp/udp有何优缺点？**             
 应用层/Application Layer          
 表示层/Presentation Layer             
 会话层/Session Layer          
