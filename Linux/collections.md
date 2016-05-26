@@ -105,4 +105,82 @@ If there are member functions with same name in base class and derived class, vi
 
 If a base class and derived class has same function and if you write code to access that function using pointer of base class then, the function in the base class is executed even if, the object of derived class is referenced with that pointer variable.
 
+**13. URL & URI**          
+URL is the abbreviation of Uniform Resource Locator. URL is the global address of documents and other resources on the World Wide Web. 
 
+The first part of the URL is called a protocol identifier and it indicates what protocol to use, and the second part is called a resource name and it specifies the IP address or the domain name where the resource is located. The protocol identifier and the resource name are separated by a colon and two forward slashes.         
+
+For example, the two URLs below point to two different files at the domain webopedia.com. The first specifies an executable file that should be fetched using the FTP protocol; the second specifies a Web page that should be fetched using the HTTP protocol:          
+
+A URL is one type of Uniform Resource Identifier (URI); the generic term for all types of names and addresses that refer to objects on the World Wide Web.  
+
+The term "Web address" is a synonym for a URL that uses the HTTP or HTTPS protocol.
+The Uniform Resource Locator (URL) was developed by Tim Berners-Lee in 1994 and the Internet Engineering Task Force (IETF) URI working group. The URL format is specified in RFC 1738 Uniform Resource Locators (URL).
+
+
+**14. Connect DB in C++**
+```
+/* Standard C++ includes */
+#include <stdlib.h>
+#include <iostream>
+
+/*
+  Include directly the different
+  headers from cppconn/ and mysql_driver.h + mysql_util.h
+  (and mysql_connection.h). This will reduce your build time!
+*/
+#include "mysql_connection.h"
+
+#include <cppconn/driver.h>
+#include <cppconn/exception.h>
+#include <cppconn/resultset.h>
+#include <cppconn/statement.h>
+
+using namespace std;
+
+int main(void)
+{
+cout << endl;
+cout << "Running 'SELECT 'Hello World!' »
+   AS _message'..." << endl;
+
+try {
+  sql::Driver *driver;
+  sql::Connection *con;
+  sql::Statement *stmt;
+  sql::ResultSet *res;
+
+  /* Create a connection */
+  driver = get_driver_instance();
+  con = driver->connect("tcp://127.0.0.1:3306", "root", "root");
+  /* Connect to the MySQL test database */
+  con->setSchema("test");
+
+  stmt = con->createStatement();
+  res = stmt->executeQuery("SELECT 'Hello World!' AS _message"); // replace with your statement
+  while (res->next()) {
+    cout << "\t... MySQL replies: ";
+    /* Access column data by alias or column name */
+    cout << res->getString("_message") << endl;
+    cout << "\t... MySQL says it again: ";
+    /* Access column fata by numeric offset, 1 is the first column */
+    cout << res->getString(1) << endl;
+  }
+  delete res;
+  delete stmt;
+  delete con;
+
+} catch (sql::SQLException &e) {
+  cout << "# ERR: SQLException in " << __FILE__;
+  cout << "(" << __FUNCTION__ << ") on line " »
+     << __LINE__ << endl;
+  cout << "# ERR: " << e.what();
+  cout << " (MySQL error code: " << e.getErrorCode();
+  cout << ", SQLState: " << e.getSQLState() << " )" << endl;
+}
+
+cout << endl;
+
+return EXIT_SUCCESS;
+}
+```
