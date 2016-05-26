@@ -5,6 +5,12 @@ SPI devices communicate in full duplex mode using a master-slave architecture wi
 
 Sometimes SPI is called a four-wire serial bus, contrasting with three-, two-, and one-wire serial buses. The SPI may be accurately described as a synchronous serial interface,[1] but it is different from the Synchronous Serial Interface (SSI) protocol, which is also a four-wire synchronous serial communication protocol, but employs differential signaling and provides only a single simplex communication channel.
 
+The SPI bus specifies four logic signals:      
+- SCLK : Serial Clock (output from master).
+- MOSI : Master Output, Slave Input (output from master).
+- MISO : Master Input, Slave Output (output from slave).
+- SS : Slave Select (active low, output from master).
+
 #Advantages of SPI#
 
 1. It’s faster than asynchronous serial
