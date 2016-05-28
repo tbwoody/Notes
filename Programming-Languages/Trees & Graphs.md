@@ -97,22 +97,82 @@ void postOrderTraversal(TreeNode node){
 ##Min-Heaps
 A min-heap is a "complete" binary tree (that is, totall filled other than the rightmost elements on the last level) where each
 node is small than its children. The root is the minimum element in the tree.      
-We have two key operations on
+We have two key operations on a min-heap: insert and extract_min.
+
+**Insert**   
+When we insert into a min-heap, we always start by inserting the element at the bottom. We insert at the rightmost spot so as to maintain the complete tree property. Then we "fix" the tree by swapping the new element with its parent, until we find an appropriate spot for the element. We essentially bubble up the minimum element.      
+
+**Extract Minimum Element**             
+Finding the minimum element of a min-heap is easy: it is always at the top. The tricker part is how to remove it.   
+First, we remove the minimum element and swap it with the last element in the heap (the bottommost, rightmost element). Then we bubble down this element, swapping it with one of its childrean until the min heap property is restored.       
+Do we swap it with the left child or the right child? That depends on their values. There is no inherent ordering between the left and right element, but you will need to take the smaller one in order to maintain the min-heap ordering.
+
 
 
 ##Max-Heaps
 Max-Heaps are essentially equivalent with the Min-Heaps, buth the elements are in descending order rather than the ascending order.    
 
 #Tries (Prefix Trees)
+A trie is a variant of an n-ary tree in which characters are stored at each node. Each path down the tree may represent a word.
 
 #Graphs
+A tree is actually a type of graph, but not all graphs are trees. Simply put, a tree is a connected graph without cycles.   
+A graph is simply a collection of nodes with edges between them.     
+- Graphs can be either directed or undirected. While directed edges are like a one-way street, undirected edges are like a two-way street.
+- The graph might consist of multiple isolated subgraphs. If there is a path between every pair of vertices, it is called a "connected graph".
+- The graph can also have cycles or not. An "acyclic graph" is one without cycles.
 
 ##Adjacency List
-
+This is the most common way to represent a graph. Every vertex or node stores a list of adjacent vertices. In an undirected graph, an edge like (a,b) would be stored twice: once in a's adjacent vertices and once in b's adjacent vertices.
 ##Adjacency Matrices
+An adjacency matrix is an NxN boolean matrix (where N is the number of nodes), where a true value at matrix[i][j] indicates an edge from the node i to node j.
 
 #Graph Search
+The two most common ways to search a graph are depth-first search and breadth-first search.    
+
+In depth-first search (DFS), we start at the root (or another arbitrarily selected node) and explore each branch completely before movin on to the next branch. That is, we go deep first before we go wide.   
+
+In breadth-first search (BFS), we start at the root (or another arbitrarily selected node) and explore each neighbor before going on to any of their children. That is, we go wide first before we go deep.
 
 ##Depth-First Search
+```
+void DFS(Node root){
+  if(root == null){
+    return;
+  }
+  
+  visit(root);
+  root.visited = true;
+  
+  for each (Node n in root.adjacent){
+    if(n.visited == false){
+      DFS(n);
+    }
+  }
+}
+```
 
 ##Bread-First Search
+
+```
+void BFS(Node root){
+  if(root == null){
+    return;
+  }
+  
+  Queue queue = new Queue();
+  root.marked = true;
+  queue.enqueue(root);
+  
+  while(!queue.isEmpty()){
+  Node r = queue.dequeue();
+  visit(r);
+  foreach(Node n in r.adjecent){
+    if(n.marked == false){
+      n.marked = true;
+      queue.enqueue(n);
+    }
+  }
+  }
+}
+```
