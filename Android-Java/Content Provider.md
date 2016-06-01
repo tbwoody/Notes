@@ -339,4 +339,4 @@ mCursor = getContentResolver().query(
     mSortOrder);                        // The sort order for the returned rows
 ```
 
-![Content Provider Query](\images\contentProviderQuery.png)
+![Content Provider Query](/images/contentProviderQuery.png)
