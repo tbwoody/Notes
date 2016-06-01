@@ -164,3 +164,7 @@ boolean canBuildWord(String str, boolean isOriginalWord, HashMap<String, Boolean
   return false;
 }
 ```
+
+**5. Reverse a Linked list**     
+[Print Reverse](http://www.geeksforgeeks.org/write-a-recursive-function-to-print-reverse-of-a-linked-list/)      
+[Reverse](http://www.geeksforgeeks.org/write-a-function-to-reverse-the-nodes-of-a-linked-list/)
