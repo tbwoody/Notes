@@ -339,4 +339,6 @@ mCursor = getContentResolver().query(
     mSortOrder);                        // The sort order for the returned rows
 ```
 
+Table 2 shows how the arguments to query(Uri,projection,selection,selectionArgs,sortOrder) match an SQL SELECT statement:     
+
 ![Content Provider Query](/images/contentProviderQuery.png)
