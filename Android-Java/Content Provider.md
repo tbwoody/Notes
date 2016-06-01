@@ -320,3 +320,23 @@ public class StudentsProvider extends ContentProvider {
   }
 }
 ```
+
+#Accessing a provider
+
+An application accesses the data from a content provider with a ContentResolver client object. This object has methods that call identically-named methods in the provider object, an instance of one of the concrete subclasses of ContentProvider. The ContentResolver methods provide the basic "CRUD" (create, retrieve, update, and delete) functions of persistent storage.
+
+The ContentResolver object in the client application's process and the ContentProvider object in the application that owns the provider automatically handle inter-process communication. ContentProvider also acts as an abstraction layer between its repository of data and the external appearance of data as tables.
+
+For example, to get a list of the words and their locales from the User Dictionary Provider, you call ContentResolver.query(). The query() method calls the ContentProvider.query() method defined by the User Dictionary Provider. The following lines of code show a ContentResolver.query() call:    
+
+```
+// Queries the user dictionary and returns results
+mCursor = getContentResolver().query(
+    UserDictionary.Words.CONTENT_URI,   // The content URI of the words table
+    mProjection,                        // The columns to return for each row
+    mSelectionClause                    // Selection criteria
+    mSelectionArgs,                     // Selection criteria
+    mSortOrder);                        // The sort order for the returned rows
+```
+
+![Content Provider Query](\images\contentProviderQuery.png)
