@@ -200,5 +200,46 @@ In both of the above situations the Java compiler requires that the class implem
 #Interfaces and Polymorphism
 Java interfaces are a way to achieve polymorphism. Polymorphism is a concept that takes some practice and thought to master. Basically, polymorphism means that an instance of an class (an object) can be used as if it were of different types. Here, a type means either a class or an interface.
 
-Look at this simple class diagram:
-![]()
+Look at this simple class diagram:     
+![Java Interface Polymorphism](/images/interfaceInherient.png)
+
+The classes above are all parts of a model representing different types of vehicles and drivers, with fields and methods. That is the responsibility of these classes - to model these entities from real life.
+
+Now imagine you needed to be able to store these objects in a database, and also serialize them to XML, JSON, or other formats. You want that implemented using a single method for each operation, available on each Car, Truck or Vehicle object. A store() method, a serializeToXML() method and a serializeToJSON() method.
+
+Please forget for a while, that implementing this functionality as methods directly on the objects may lead to a messy class hierarchy. Just imagine that this is how you want the operations implemented.
+
+Where in the above diagram would you put these three methods, so they are accessible on all classes?
+
+One way to solve this problem would be to create a common superclass for the Vehicle and Driver class, which has the storage and serialization methods. However, this would result in a conceptual mess. The class hierarchy would no longer model vehicles and drivers, but also be tied to the storage and serialization mechanisms used in your application.
+
+A better solution would be to create some interfaces with the storage and serialization methods on, and let the classes implement these interfaces. Here are examples of such interfaces:    
+
+```
+public interface Storable {
+
+    public void store();
+}
+```
+
+```
+public interface Serializable {
+    public void serializeToXML(Writer writer);
+    public void serializeToJSON(Writer writer);
+}
+```
+
+When each class implements these two interfaces and their methods, you can access the methods of these interfaces by casting the objects to instances of the interface types. You don't need to know exactly what class a given object is of, as long as you know what interface it implements. Here is an example:   
+
+```
+Car car = new Car();
+
+Storable storable = (Storable) car;
+storable.store();
+
+Serializable serializable = (Serializable) car;
+serializable.serializeToXML (new FileWriter("car.xml"));
+serializable.serializeToJSON(new FileWriter("car.json"));
+```
+
+As you can probably imagine by now, interfaces provide a cleaner way of implementing cross cutting functionality in classes than inheritance.    
