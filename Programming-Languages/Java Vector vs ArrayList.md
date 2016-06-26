@@ -38,7 +38,7 @@ It totally depends on the requirement. If there is a need to perform “thread-s
 **How to make ArrayList synchronized?**
 As I stated above ArrayList methods are non-synchronized but still if there is a need you can make them synchronized like this –
 
-
+```
 //Use Collecions.synzhonizedList method
 List list = Collections.synchronizedList(new ArrayList());
 ...
@@ -52,3 +52,4 @@ synchronized (list) {
       iterator.next();
       ...
 }
+```
