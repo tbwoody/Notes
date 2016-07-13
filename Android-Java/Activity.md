@@ -101,3 +101,15 @@ onDestroy()
 onPaused() 
 onStop()
 ```
+
+- Life cycle of re-orientation
+```
+onPause();
+onSaveInstanceState();
+onStop();
+onDestroy();
+
+onCreate();
+onStart();
+onResume();
+```
