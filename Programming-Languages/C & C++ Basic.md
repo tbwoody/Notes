@@ -367,14 +367,77 @@ Both processes and threads are independent sequences of execution. The typical d
 A process is an executing instance of an application. What does that mean? Well, for example, when you double-click the Microsoft Word icon, you start a process that runs Word. A thread is a path of execution within a process. Also, a process can contain multiple threads.
 
 #15. What is the difference between mutex and semaphore?
+**Mutex:**   
+
+Is a key to a toilet. One person can have the key - occupy the toilet - at the time. When finished, the person gives (frees) the key to the next person in the queue.
+
+Officially: "Mutexes are typically used to serialise access to a section of  re-entrant code that cannot be executed concurrently by more than one thread. A mutex object only allows one thread into a controlled section, forcing other threads which attempt to gain access to that section to wait until the first thread has exited from that section."
+
+(A mutex is really a semaphore with value 1.)
+
+**Semaphore:** 
+
+Is the number of free identical toilet keys. Example, say we have four toilets with identical locks and keys. The semaphore count - the count of keys - is set to 4 at beginning (all four toilets are free), then the count value is decremented as people are coming in. If all toilets are full, ie. there are no free keys left, the semaphore count is 0. Now, when eq. one person leaves the toilet, semaphore is increased to 1 (one free key), and given to the next person in the queue.
+
+Officially: "A semaphore restricts the number of simultaneous users of a shared resource up to a maximum number. Threads can request access to the resource (decrementing the semaphore), and can signal that they have finished using the resource (incrementing the semaphore)."
 
 #16. What is the difference between new and operator new?
 
+I usually try to phrase things differently to differentiate between the two a bit better, but it's a good question in any case.
+
+Operator new is a function that allocates raw memory -- at least conceptually, it's not much different from malloc(). Though it's fairly unusual unless you're writing something like your own container, you can call operator new directly, like:
+
+```
+char *x = static_cast<char *>(operator new(100));
+```
+
+It's also possible to overload operator new either globally, or for a specific class. IIRC, the signature is:
+
+```
+void *operator new(size_t);
+```
+
+Of course, if you overload an operator new (either global or for a class), you'll also want/need to overload the matching operator delete as well. For what it's worth, there's also a separate operator new[] that's used to allocate memory for arrays -- but you're almost certainly better off ignoring that whole mess completely.
+
+The new operator is what you normally use to create an object from the free store:
+
+```
+my_class *x = new my_class(0);
+```
+
+The difference between the two is that operator new just allocates raw memory, nothing else. The new operator starts by using operator new to allocate memory, but then it invokes the constructor for the right type of object, so the result is a real live object created in that memory. If that object contains any other objects (either embedded or as base classes) those constructors as invoked as well.  
+
 #17. What is the difference between assignment and initialization?
+Initialization is creating an instance(of type) with certain value.
+
+```
+int i = 0;
+```
+
+Assignment is to give value to an already created instance(of type).
+
+```
+int i;
+i = 0
+```
 
 #18. What is polymorphism? How does it implemented?
+1. [http://www.tutorialspoint.com/cplusplus/cpp_polymorphism.htm](http://www.tutorialspoint.com/cplusplus/cpp_polymorphism.htm)
+2. [http://www.cplusplus.com/doc/tutorial/polymorphism/](http://www.cplusplus.com/doc/tutorial/polymorphism/)
 
 #19. What is encapsulation?
+[http://www.tutorialspoint.com/cplusplus/cpp_data_encapsulation.htm](http://www.tutorialspoint.com/cplusplus/cpp_data_encapsulation.htm)
+
+In programming languages, encapsulation is used to refer to one of two related but distinct notions, and sometimes to the combination thereof:   
+
+- A language mechanism for restricting direct access to some of the object's components.
+- A language construct that facilitates the bundling of data with the methods (or other functions) operating on that data.
+
+Some programming language researchers and academics use the first meaning alone or in combination with the second as a distinguishing feature of object-oriented programming, while other programming languages which provide lexical closures view encapsulation as a feature of the language orthogonal to object orientation.
+
+The second definition is motivated by the fact that in many OOP languages hiding of components is not automatic or can be overridden; thus, information hiding is defined as a separate notion by those who prefer the second definition.
+
+The features of encapsulation are supported using classes in most object-oriented programming languages, although other alternatives also exist.
 
 #20. Copy constructor? When it is called?
 
