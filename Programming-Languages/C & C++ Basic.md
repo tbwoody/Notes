@@ -440,24 +440,96 @@ The second definition is motivated by the fact that in many OOP languages hiding
 The features of encapsulation are supported using classes in most object-oriented programming languages, although other alternatives also exist.
 
 #20. Copy constructor? When it is called?
+1. [https://en.wikipedia.org/wiki/Copy_constructor_(C%2B%2B)](https://en.wikipedia.org/wiki/Copy_constructor_(C%2B%2B))
+2. [http://quiz.geeksforgeeks.org/copy-constructor-in-cpp/](http://quiz.geeksforgeeks.org/copy-constructor-in-cpp/)
 
 #21. Difference between copy constructor and assignment?
+Which of the following two statements call copy constructor and which one calls assignment operator?
+```
+MyClass t1, t2;
+MyClass t3 = t1;  // ----> (1)
+t2 = t1;          // -----> (2)
+```
+Copy constructor is called when a new object is created from an existing object, as a copy of the existing object. Assignment operator is called when an already initialized object is assigned a new value from another existing object. In the above example (1) calls copy constrictor and (2) calls assignment operator. See this for more details.
 
 #22. What is friend function?
+[http://www.tutorialspoint.com/cplusplus/cpp_friend_functions.htm](http://www.tutorialspoint.com/cplusplus/cpp_friend_functions.htm)
+
+A friend function of a class is defined outside that class' scope but it has the right to access all private and protected members of the class. Even though the prototypes for friend functions appear in the class definition, friends are not member functions.
+
+A friend can be a function, function template, or member function, or a class or class template, in which case the entire class and all of its members are friends.
+
+To declare a function as a friend of a class, precede the function prototype in the class definition with keyword friend as follows:
+
+```
+class Box
+{
+   double width;
+public:
+   double length;
+   friend void printWidth( Box box );
+   void setWidth( double wid );
+};
+```
+
+To declare all member functions of class ClassTwo as friends of class ClassOne, place a following declaration in the definition of class ClassOne:
+
+```
+friend class ClassTwo;
+```
 
 #23. What’s the stack?
+1. [http://www.cplusplus.com/reference/stack/stack/](http://www.cplusplus.com/reference/stack/stack/)
+2. [http://www.learncpp.com/cpp-tutorial/79-the-stack-and-the-heap/](http://www.learncpp.com/cpp-tutorial/79-the-stack-and-the-heap/)
 
 #24. What’s LIFO (Last In First Out)?
+[http://www.cplusplus.com/reference/stack/stack/](http://www.cplusplus.com/reference/stack/stack/)
 
 #25. overloading and overriding difference?
+Overloading allows functions of the same name and defined in the same reference (class) with varying parameters and return types - or more generally, behavior.
+
+Overriding allows a child to override functional behaviors of its parents' functions.  The parent can also require overrides be defined with abstract methods.   Interfaces are good at imposing overrides as they lack any implementation!
+
+
+**Overriding**
+1) Methods name and signatures must be same.
+
+2)Overriding is the concept of runtime polymorphism
+
+3)When a function of base class is re-defined in the derived class called as Overriding
+
+4)It needs inheritance.
+
+5)Method should have same data type.
+
+6)Method should be public.
+
+
+**Overloading**
+1) Having same method name with different Signatures.
+
+2)Overloading is the concept of compile time polymorphism
+
+3)Two functions having same name and return type, but with different type and/or number of arguments is called as Overloading
+
+4)It doesn't need inheritance.
+
+5)Method can have different data types
+
+6)Methods can be different access specifies.
+
 
 #26. how is the source file compiled to executable(from source file -> binary file)?
+[http://courses.cms.caltech.edu/cs11/material/cpp/mike/misc/compiling_c++.html](http://courses.cms.caltech.edu/cs11/material/cpp/mike/misc/compiling_c++.html)
 
 #27. After the source file is compiled to binary file, how is the binary file orgnized and stored?
 
+
 #28. What is overloading? How does the computer know which function is according to which implementation since they have the same name?
+Different parameters and return type
 
 #29. C++ file in Linux: which compiler do you use?
+g++
 
 #30. Given a file, tell me the steps of reading the file.
 
