@@ -1,3 +1,7 @@
+1. [https://developer.android.com/reference/android/app/Service.html](https://developer.android.com/reference/android/app/Service.html)
+2. [https://developer.android.com/guide/components/services.html](https://developer.android.com/guide/components/services.html)
+
+
 **When to use?**      
 
 - The Service can be used in tasks with no UI, but shouldn't be too long. If you need to perform long tasks, you must use threads within Service.             
