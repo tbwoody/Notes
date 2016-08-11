@@ -1,6 +1,6 @@
 1. [https://developer.android.com/reference/android/app/Service.html](https://developer.android.com/reference/android/app/Service.html)
 2. [https://developer.android.com/guide/components/services.html](https://developer.android.com/guide/components/services.html)
-
+3. [https://developer.android.com/guide/components/bound-services.html](https://developer.android.com/guide/components/bound-services.html)
 
 **When to use?**      
 
