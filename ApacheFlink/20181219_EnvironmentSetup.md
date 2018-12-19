@@ -21,7 +21,7 @@ Prerequisites for building Flink:
 * Java 8 (Java 9 and 10 are not yet supported)
 
 **2. Download and Install IntelliJ IDE**
-The IntelliJ IDEA is downloaed from [DOWNLOAD](https://www.jetbrains.com/idea/download/#section=linux)
+The IntelliJ IDEA is downloaed from [DOWNLOAD PAGE.](https://www.jetbrains.com/idea/download/#section=linux)
 
 Installation Instructions
 - Unpack the idea idea-2018.3.2.tar.gz file to an empty directory using the following command: tar -xzf idea-2018.3.2.tar.gz
@@ -46,8 +46,8 @@ The IntelliJ installation setup offers to install the Scala plugin. If it is not
 - Right-click on the imported Flink project -> Maven -> Generate Sources and Update Folders. Note that this will install Flink libraries in your local Maven repository, i.e. “/home/-your-user-/.m2/repository/org/apache/flink/”. Alternatively, mvn clean package -DskipTests also creates the necessary files for the IDE to work with but without installing libraries.
 - Build the Project (Build -> Make Project)
 
-3. Checkstyle For Java:
-IntelliJ supports checkstyle within the IDE using the Checkstyle-IDEA plugin.
+3. Checkstyle For Java: 
+IntelliJ supports checkstyle within the IDE using the Checkstyle-IDEA plugin. 
 
 - Install the “Checkstyle-IDEA” plugin from the IntelliJ plugin repository.
 - Configure the plugin by going to Settings -> Other Settings -> Checkstyle.
