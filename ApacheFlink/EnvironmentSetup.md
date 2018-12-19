@@ -1,6 +1,6 @@
-This is my first blog on ApacheFlink. It is a brief guide on how to set up IntelliJ IDEA IDE for the development of ApacheFlink. This blog is original from [Flink Development Importing Flink into an IDE](https://ci.apache.org/projects/flink/flink-docs-master/flinkDev/ide_setup.html#intellij-idea)
+This is my first blog on ApacheFlink. It is a brief guide on how to set up IntelliJ IDEA IDE for the development of ApacheFlink. This blog is original from [Flink Development Importing Flink into an IDE](https://ci.apache.org/projects/flink/flink-docs-master/flinkDev/ide_setup.html#intellij-idea).
 
-**Topics**
+This blog is organized as follows:
 - Download ApacheFlink Source Code
 - Download and Install IntelliJ IDE
 - Import ApacheFlink to IntelliJ IDE
