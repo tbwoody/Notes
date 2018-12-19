@@ -29,14 +29,14 @@ Installation Instructions
 - Run idea.sh from the bin subdirectory.
 
 **3. Import ApacheFlink to IntelliJ IDE**
-1. Installing the Scala Plugin
+1. Installing the Scala Plugin:
 The IntelliJ installation setup offers to install the Scala plugin. If it is not installed, follow these instructions before importing Flink to enable support for Scala projects and files:
 
 - Go to IntelliJ plugins settings (IntelliJ IDEA -> Preferences -> Plugins) and click on “Install Jetbrains plugin…”.
 - Select and install the “Scala” plugin.
 - Restart IntelliJ
 
-2. Importing Flink
+2. Importing Flink:
 - Start IntelliJ IDEA and choose “Import Project”
 - Select the root folder of the Flink repository
 - Choose “Import project from external model” and select “Maven”
@@ -46,7 +46,7 @@ The IntelliJ installation setup offers to install the Scala plugin. If it is not
 - Right-click on the imported Flink project -> Maven -> Generate Sources and Update Folders. Note that this will install Flink libraries in your local Maven repository, i.e. “/home/-your-user-/.m2/repository/org/apache/flink/”. Alternatively, mvn clean package -DskipTests also creates the necessary files for the IDE to work with but without installing libraries.
 - Build the Project (Build -> Make Project)
 
-3. Checkstyle For Java
+3. Checkstyle For Java:
 IntelliJ supports checkstyle within the IDE using the Checkstyle-IDEA plugin.
 
 - Install the “Checkstyle-IDEA” plugin from the IntelliJ plugin repository.
@@ -54,10 +54,10 @@ IntelliJ supports checkstyle within the IDE using the Checkstyle-IDEA plugin.
 - Set the “Scan Scope” to “Only Java sources (including tests)”.
 - Select 8.9 in the “Checkstyle Version” dropdown and click apply. This step is important, don’t skip it!
 - In the “Configuration File” pane, add a new configuration using the plus icon:
--- Set the “Description” to “Flink”.
--- Select “Use a local Checkstyle file”, and point it to "tools/maven/checkstyle.xml" within your repository.
--- Check the box for “Store relative to project location”, and click “Next”.
--- Configure the “checkstyle.suppressions.file” property value to "suppressions.xml", and click “Next”, then “Finish”.
+*Set the “Description” to “Flink”.
+*Select “Use a local Checkstyle file”, and point it to "tools/maven/checkstyle.xml" within your repository.
+*Check the box for “Store relative to project location”, and click “Next”.
+*Configure the “checkstyle.suppressions.file” property value to "suppressions.xml", and click “Next”, then “Finish”.
 - Select “Flink” as the only active configuration file, and click “Apply” and “OK”.
 - Checkstyle will now give warnings in the editor for any Checkstyle violations.
 Once the plugin is installed you can directly import "tools/maven/checkstyle.xml" by going to Settings -> Editor -> Code Style -> Java -> Gear Icon next to Scheme dropbox. This will for example automatically adjust the imports layout.
