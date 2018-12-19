@@ -29,14 +29,14 @@ Installation Instructions
 - Run idea.sh from the bin subdirectory.
 
 **3. Import ApacheFlink to IntelliJ IDE**
-1. Installing the Scala Plugin:
+1.Installing the Scala Plugin:
 The IntelliJ installation setup offers to install the Scala plugin. If it is not installed, follow these instructions before importing Flink to enable support for Scala projects and files:
 
 - Go to IntelliJ plugins settings (IntelliJ IDEA -> Preferences -> Plugins) and click on “Install Jetbrains plugin…”.
 - Select and install the “Scala” plugin.
 - Restart IntelliJ
 
-2. Importing Flink:
+2.Importing Flink:
 - Start IntelliJ IDEA and choose “Import Project”
 - Select the root folder of the Flink repository
 - Choose “Import project from external model” and select “Maven”
@@ -46,8 +46,8 @@ The IntelliJ installation setup offers to install the Scala plugin. If it is not
 - Right-click on the imported Flink project -> Maven -> Generate Sources and Update Folders. Note that this will install Flink libraries in your local Maven repository, i.e. “/home/-your-user-/.m2/repository/org/apache/flink/”. Alternatively, mvn clean package -DskipTests also creates the necessary files for the IDE to work with but without installing libraries.
 - Build the Project (Build -> Make Project)
 
-3. Checkstyle For Java: 
-IntelliJ supports checkstyle within the IDE using the Checkstyle-IDEA plugin. 
+3.Checkstyle For Java:    
+IntelliJ supports checkstyle within the IDE using the Checkstyle-IDEA plugin.    
 
 - Install the “Checkstyle-IDEA” plugin from the IntelliJ plugin repository.
 - Configure the plugin by going to Settings -> Other Settings -> Checkstyle.
@@ -66,5 +66,5 @@ You can scan an entire module by opening the Checkstyle tools window and clickin
 
 *Note Some modules are not fully covered by checkstyle, which include flink-core, flink-optimizer, and flink-runtime. Nevertheless please make sure that code you add/modify in these modules still conforms to the checkstyle rules.
 
-4. Checkstyle For Scala:
+4.Checkstyle For Scala:    
 Enable scalastyle in Intellij by selecting Settings -> Editor -> Inspections, then searching for “Scala style inspections”. Also Place "tools/maven/scalastyle_config.xml" in the "<root>/.idea" or "<root>/project" directory.
