@@ -6,7 +6,7 @@ This blog is organized as follows:
 - Import ApacheFlink to IntelliJ IDE
 
 
-**1. Download ApacheFlink Source Code**
+**1. Download ApacheFlink Source Code**   
 The source code can be checked out from Apache's [repositories](https://flink.apache.org/community.html#source-code)
 ```
 git clone https://github.com/apache/flink.git
@@ -20,7 +20,7 @@ Prerequisites for building Flink:
 * Maven (we recommend version 3.2.5)
 * Java 8 (Java 9 and 10 are not yet supported)
 
-**2. Download and Install IntelliJ IDE**
+**2. Download and Install IntelliJ IDE**    
 The IntelliJ IDEA is downloaed from [DOWNLOAD PAGE.](https://www.jetbrains.com/idea/download/#section=linux)
 
 Installation Instructions
@@ -28,7 +28,7 @@ Installation Instructions
 - Note: A new instance MUST NOT be extracted over an existing one. The target folder must be empty.
 - Run idea.sh from the bin subdirectory.
 
-**3. Import ApacheFlink to IntelliJ IDE**
+**3. Import ApacheFlink to IntelliJ IDE**    
 1.Installing the Scala Plugin:
 The IntelliJ installation setup offers to install the Scala plugin. If it is not installed, follow these instructions before importing Flink to enable support for Scala projects and files:
 
