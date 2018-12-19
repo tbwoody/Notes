@@ -7,6 +7,7 @@ This blog is organized as follows:
 
 
 **1. Download ApacheFlink Source Code**
+The source code can be checked out from Apache's [repositories](https://flink.apache.org/community.html#source-code)
 
 
 **2. Download and Install IntelliJ IDE**
