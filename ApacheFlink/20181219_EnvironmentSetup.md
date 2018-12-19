@@ -65,3 +65,6 @@ Once the plugin is installed you can directly import "tools/maven/checkstyle.xml
 You can scan an entire module by opening the Checkstyle tools window and clicking the “Check Module” button. The scan should report no errors.
 
 *Note Some modules are not fully covered by checkstyle, which include flink-core, flink-optimizer, and flink-runtime. Nevertheless please make sure that code you add/modify in these modules still conforms to the checkstyle rules.
+
+4. Checkstyle For Scala:
+Enable scalastyle in Intellij by selecting Settings -> Editor -> Inspections, then searching for “Scala style inspections”. Also Place "tools/maven/scalastyle_config.xml" in the "<root>/.idea" or "<root>/project" directory.
