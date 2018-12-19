@@ -54,10 +54,10 @@ IntelliJ supports checkstyle within the IDE using the Checkstyle-IDEA plugin.
 - Set the “Scan Scope” to “Only Java sources (including tests)”.
 - Select 8.9 in the “Checkstyle Version” dropdown and click apply. This step is important, don’t skip it!
 - In the “Configuration File” pane, add a new configuration using the plus icon:
-  -Set the “Description” to “Flink”.
-  -Select “Use a local Checkstyle file”, and point it to "tools/maven/checkstyle.xml" within your repository.
-  -Check the box for “Store relative to project location”, and click “Next”.
-  -Configure the “checkstyle.suppressions.file” property value to "suppressions.xml", and click “Next”, then “Finish”.
+  - Set the “Description” to “Flink”.
+  - Select “Use a local Checkstyle file”, and point it to "tools/maven/checkstyle.xml" within your repository.
+  - Check the box for “Store relative to project location”, and click “Next”.
+  - Configure the “checkstyle.suppressions.file” property value to "suppressions.xml", and click “Next”, then “Finish”.
 - Select “Flink” as the only active configuration file, and click “Apply” and “OK”.
 - Checkstyle will now give warnings in the editor for any Checkstyle violations.
 Once the plugin is installed you can directly import "tools/maven/checkstyle.xml" by going to Settings -> Editor -> Code Style -> Java -> Gear Icon next to Scheme dropbox. This will for example automatically adjust the imports layout.
