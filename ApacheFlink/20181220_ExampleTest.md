@@ -33,12 +33,26 @@ Starting standalonesession daemon on host MY-COMPUTER-NAME.
 
 Test from Internet Browser:    
 Once a local Flink cluster is started successfully, you can test "Dispatcher’s web frontend" from any Internet browser.
-You just need hit the default URL: http://localhost:8081. 
+You just need hit the default URL: http://localhost:8081.     
 If everything is up and running, The web frontend should report a single available TaskManager instance.    
 
-
 ![Web Frontend](/images/jobmanager-1.png) 
-
+    
+    
+You can also verify that the system is running by checking the log files in the logs directory:    
+```
+$ tail log/flink-*-standalonesession-*.log
+INFO ... - Rest endpoint listening at localhost:8081
+INFO ... - http://localhost:8081 was granted leadership ...
+INFO ... - Web frontend listening at http://localhost:8081.
+INFO ... - Starting RPC endpoint for StandaloneResourceManager at akka://flink/user/resourcemanager .
+INFO ... - Starting RPC endpoint for StandaloneDispatcher at akka://flink/user/dispatcher .
+INFO ... - ResourceManager akka.tcp://flink@localhost:6123/user/resourcemanager was granted leadership ...
+INFO ... - Starting the SlotManager.
+INFO ... - Dispatcher akka.tcp://flink@localhost:6123/user/dispatcher was granted leadership ...
+INFO ... - Recovering all persisted jobs.
+INFO ... - Registering TaskManager ... under ... at the SlotManager.
+```
 
 **3. Read the Code**
 
