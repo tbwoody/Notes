@@ -35,7 +35,7 @@ Test from Internet Browser:
 Once a local Flink cluster is started successfully, you can test "Dispatcher’s web frontend" from any Internet browser.
 You just need hit the default URL: http://localhost:8081. 
 If everything is up and running, The web frontend should report a single available TaskManager instance.
-
+![Dispatcher’s web frontend](/image/jobmanager-1.png)
 
 **3. Read the Code**
 
