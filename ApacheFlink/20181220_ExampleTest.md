@@ -206,6 +206,7 @@ it is working perfectly
 ```
 The .out file will print the counts at the end of each time window as long as words are floating in, e.g.:    
 ```
+$ tail -f log/flink-*-taskexecutor-*.out
 it : 1
 perfectly : 1
 working : 1
