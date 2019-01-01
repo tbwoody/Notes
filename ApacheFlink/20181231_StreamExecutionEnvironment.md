@@ -1,1 +1,1 @@
-The StreamExecutionEnvironment contains the ExecutionConfig which allows to set job specific configuration values for the runtime. To change the defaults that affect all jobs, see <Configuration>(https://ci.apache.org/projects/flink/flink-docs-master/ops/config.html).
+The StreamExecutionEnvironment contains the ExecutionConfig which allows to set job specific configuration values for the runtime. To change the defaults that affect all jobs, see (Configuration)(https://ci.apache.org/projects/flink/flink-docs-master/ops/config.html).
