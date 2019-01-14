@@ -10,11 +10,11 @@ There are several predefined stream sources accessible from the StreamExecutionE
 
 - readFile(fileInputFormat, path, watchType, interval, pathFilter, typeInfo) - This is the method called internally by the two previous ones. It reads files in the path based on the given fileInputFormat. Depending on the provided watchType, this source may periodically monitor (every interval ms) the path for new data (FileProcessingMode.PROCESS_CONTINUOUSLY), or process once the data currently in the path and exit (FileProcessingMode.PROCESS_ONCE). Using the pathFilter, the user can further exclude files from being processed.    
 
-IMPLEMENTATION:    
+  - IMPLEMENTATION:    
  
 Under the hood, Flink splits the file reading process into two sub-tasks, namely directory monitoring and data reading. Each of these sub-tasks is implemented by a separate entity. Monitoring is implemented by a single, non-parallel (parallelism = 1) task, while reading is performed by multiple tasks running in parallel. The parallelism of the latter is equal to the job parallelism. The role of the single monitoring task is to scan the directory (periodically or only once depending on the watchType), find the files to be processed, divide them in splits, and assign these splits to the downstream readers. The readers are the ones who will read the actual data. Each split is read by only one reader, while a reader can read multiple splits, one-by-one.    
 
-IMPORTANT NOTES:    
+  - IMPORTANT NOTES:    
 
 If the watchType is set to FileProcessingMode.PROCESS_CONTINUOUSLY, when a file is modified, its contents are re-processed entirely. This can break the “exactly-once” semantics, as appending data at the end of a file will lead to all its contents being re-processed.    
 
@@ -22,7 +22,7 @@ If the watchType is set to FileProcessingMode.PROCESS_ONCE, the source scans the
 
 **Socket-based:**    
 
-socketTextStream - Reads from a socket. Elements can be separated by a delimiter.     
+- socketTextStream - Reads from a socket. Elements can be separated by a delimiter.     
 
 **Collection-based:**    
 
