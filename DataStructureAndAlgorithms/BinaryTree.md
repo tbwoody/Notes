@@ -52,6 +52,9 @@ The above height-balancing scheme is used in [AVL](https://www.geeksforgeeks.org
 
 ![exampleBalancedTree](/images/exampleBalancedTree.png)
 
+See more details about [How to determine if a binary tree is height-balanced] (https://www.geeksforgeeks.org/how-to-determine-if-a-binary-tree-is-balanced/)    
+
+
 ## A degenerate (or pathological) Tree
 A Tree where every internal node has one child. Such trees are performance-wise same as linked list.  
 ![oneDegenerateTree](/images/oneDegenerateTree.png)
