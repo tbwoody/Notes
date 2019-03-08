@@ -41,6 +41,17 @@ Example of a Perfect binary tree is ancestors in the family. Keep a person at ro
 
 A binary tree is balanced if the height of the tree is O(Log n) where n is the number of nodes. For Example, AVL tree maintains O(Log n) height by making sure that the difference between heights of left and right subtrees is 1. Red-Black trees maintain O(Log n) height by making sure that the number of Black nodes on every root to leaf paths are same and there are no adjacent red nodes. Balanced Binary Search trees are performance wise good as they provide O(log n) time for search, insert and delete.    
 
+A binary tree where no leaf is much farther away from the root than any other leaf. Different balancing schemes allow different definitions of “much farther” and different amounts of work to keep them balanced.    
+Consider a height-balancing scheme where following conditions should be checked to determine if a binary tree is balanced.    
+An empty tree is height-balanced. A non-empty binary tree T is balanced if:    
+1) Left subtree of T is balanced    
+2) Right subtree of T is balanced    
+3) The difference between heights of left subtree and right subtree is not more than 1.    
+
+The above height-balancing scheme is used in [AVL](https://www.geeksforgeeks.org/avl-tree-set-1-insertion/) trees. The diagram below shows two trees, one of them is height-balanced and other is not. The second tree is not height-balanced because height of left subtree is 2 more than height of right subtree.    
+
+![exampleBalancedTree](/images/exampleBalancedTree.png)
+
 ## A degenerate (or pathological) Tree
 A Tree where every internal node has one child. Such trees are performance-wise same as linked list.  
 ![oneDegenerateTree](/images/oneDegenerateTree.png)
