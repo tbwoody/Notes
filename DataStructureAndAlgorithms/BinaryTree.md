@@ -52,7 +52,7 @@ The above height-balancing scheme is used in [AVL](https://www.geeksforgeeks.org
 
 ![exampleBalancedTree](/images/exampleBalancedTree.png)
 
-See more details about [How to determine if a binary tree is height-balanced] (https://www.geeksforgeeks.org/how-to-determine-if-a-binary-tree-is-balanced/)    
+See more details about [How to determine if a binary tree is height-balanced](https://www.geeksforgeeks.org/how-to-determine-if-a-binary-tree-is-balanced/)    
 
 
 ## A degenerate (or pathological) Tree
