@@ -9,7 +9,7 @@ Following are common types of binary trees.
 ## Full Binary Tree
 A Binary Tree is full if every node has 0 or 2 children. Following are examples of a full binary tree. We can also say a full binary tree is a binary tree in which all nodes except leaves have two children.
 
-![FullBinaryTree](images/fullBinaryTree.png)
+![FullBinaryTree](/images/fullBinaryTree.png)
 
 In a Full Binary, number of leaf nodes is number of internal nodes plus 1
        L = I + 1
